@@ -1,7 +1,7 @@
-const {insertRewards} = require('../../../models/rewards');
+const {insertReward} = require('../../../models/rewards');
 
 exports.insertReward = (request, response) => {
-  insertRewards(request.body).then((reward) => {
+  insertReward(request.body).then((reward) => {
     response.status(200).json(reward);
   }).catch((error) => {
     console.log(error);
