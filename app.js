@@ -10,10 +10,10 @@ const appsRouter = require('./routes/apps');
 const storesRouter = require('./routes/stores');
 
 const app = express();
-const PORT = 3000;
+const PORT = 3001;
 
 app.use(cors({
-  origin:['http://localhost:3000'],
+  origin:[`http://localhost:${PORT}`],
   methods:['GET','POST'],
   credentials: true
 }));

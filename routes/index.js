@@ -5,7 +5,7 @@ const {Coupons, Stores, Customers, Rewards} = require('../database');
 
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/', (req, res, next) => {
   res.status(200);
   res.end('hi!');
 
