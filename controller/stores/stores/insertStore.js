@@ -1,4 +1,4 @@
-const insertStore = require('../../../models/stores').insertStore;
+const {insertStore} = require('../../../models/stores');
 
 exports.insertStore = (request, response) => {
   insertStore(request.body).then((store) => {

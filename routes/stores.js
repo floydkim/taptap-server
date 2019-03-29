@@ -1,10 +1,8 @@
 const express = require('express');
-const insertReward = require('../controller/stores/rewards').insertReward;
-const getAllRewards = require('../controller/stores/rewards').getAllRewards;
-const insertStore = require('../controller/stores/stores').insertStore;
-const getAllStores = require('../controller/stores/stores').getAllStores;
-const insertCustomer = require('../controller/stores/customers').insertCustomer;
-const getAllCustomers = require('../controller/stores/customers').getAllCustomers;
+const {insertCoupon, getAllCoupons} = require('../controller/stores/coupons');
+const {insertReward, getAllRewards} = require('../controller/stores/rewards');
+const {insertStore, getAllStores} = require('../controller/stores/stores');
+const {insertCustomer, getAllCustomers} = require('../controller/stores/customers');
 const router = express.Router();
 
 /* GET users listing. */
@@ -23,5 +21,9 @@ router.post('/stores/insert-store', insertStore);
 // /rewards
 router.get('/rewards/get-all-rewards', getAllRewards);
 router.post('/rewards/insert-reward', insertReward);
+
+// /coupons
+router.get('/coupons/get-all-coupons', getAllCoupons);
+router.post('/coupons/insert-coupon', insertCoupon);
 
 module.exports = router;

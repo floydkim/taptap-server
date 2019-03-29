@@ -1,4 +1,4 @@
-const getAllStores = require('../../../models/stores').getAllStores;
+const {getAllStores} = require('../../../models/stores');
 
 exports.getAllStores = (request, response) => {
   getAllStores().then((stores) => {

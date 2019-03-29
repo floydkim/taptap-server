@@ -1,4 +1,4 @@
-const insertCustomer = require('../../../models/customer').insertCustomer;
+const {insertCustomer} = require('../../../models/customer');
 
 exports.insertCustomer = (request, response) => {
   insertCustomer(request.body).then((customer) => {

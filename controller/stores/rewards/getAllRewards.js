@@ -1,4 +1,4 @@
-const getAllRewards = require('../../../models/rewards').getAllRewards;
+const {getAllRewards} = require('../../../models/rewards');
 
 exports.getAllRewards = (request, response) => {
   getAllRewards().then((rewards) => {

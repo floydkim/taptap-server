@@ -1,4 +1,4 @@
-const getAllCustomers = require('../../../models/customer').getAllCustomers;
+const {getAllCustomers} = require('../../../models/customer');
 
 exports.getAllCustomers = (request, response) => {
   getAllCustomers().then((customers) => {

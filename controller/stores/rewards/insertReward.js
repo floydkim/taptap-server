@@ -1,4 +1,4 @@
-const insertRewards = require('../../../models/rewards').insertReward;
+const {insertRewards} = require('../../../models/rewards');
 
 exports.insertReward = (request, response) => {
   insertRewards(request.body).then((reward) => {
