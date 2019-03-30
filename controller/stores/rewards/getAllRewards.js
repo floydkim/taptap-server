@@ -1,10 +1,12 @@
-const {getAllRewards} = require('../../../models/rewards');
+const { getAllRewards } = require('../../../models/rewards');
 
 exports.getAllRewards = (request, response) => {
-  getAllRewards().then((rewards) => {
-    response.status(200).json(rewards);
-  }).catch((error) => {
-    console.error(error);
-    response.sendStatus(500);
-  });
+  getAllRewards()
+    .then(rewards => {
+      response.status(200).json(rewards);
+    })
+    .catch(error => {
+      console.error(error);
+      response.sendStatus(500);
+    });
 };

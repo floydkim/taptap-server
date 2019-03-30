@@ -1,6 +1,6 @@
-const {Stores} = require('../../database');
+const { Stores } = require('../../database');
 
-exports.insertStore = (store) => {
+exports.insertStore = store => {
   return Stores.create({
     name: store.name
   });

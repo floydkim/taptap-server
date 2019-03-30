@@ -13,17 +13,21 @@ const storesRouter = require('./routes/stores');
 const app = express();
 const PORT = 3001;
 
-app.use(session({
-  secret: '@codestates',
-  resave: false,
-  saveUninitialized: true
-}));
+app.use(
+  session({
+    secret: '@codestates',
+    resave: false,
+    saveUninitialized: true
+  })
+);
 
-app.use(cors({
-  origin:[`http://localhost:${PORT}`],
-  methods:['GET','POST'],
-  credentials: true
-}));
+app.use(
+  cors({
+    origin: [`http://localhost:${PORT}`, 'http://localhost:3000'],
+    methods: ['GET', 'POST'],
+    credentials: true
+  })
+);
 
 app.use(cookieParser());
 

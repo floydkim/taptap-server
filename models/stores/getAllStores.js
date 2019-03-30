@@ -1,6 +1,5 @@
-const {Stores} = require('../../database');
+const { Stores } = require('../../database');
 
 exports.getAllStores = () => {
-  return Stores.sync()
-    .then(() => Stores.findAll());
+  return Stores.sync().then(() => Stores.findAll());
 };

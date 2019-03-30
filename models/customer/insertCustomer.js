@@ -1,12 +1,12 @@
-const {Customers} = require('../../database');
+const { Customers } = require('../../database');
 
-exports.insertCustomer = (customer) => {
+exports.insertCustomer = customer => {
   return Customers.findOrCreate({
-   where: {
-     phoneNumber: customer.phoneNumber
-   },
-   defaults: {
-     phoneNumber: customer.phoneNumber
-   }
+    where: {
+      phoneNumber: customer.phoneNumber
+    },
+    defaults: {
+      phoneNumber: customer.phoneNumber
+    }
   });
 };
