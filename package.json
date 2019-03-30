@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "NODE_ENV=development node ./app.js",
-    "test": "mocha ./spec/*.js --exit",
+    "test": "mocha ./spec/**/*-spec.js --exit",
     "precommit": "NODE_ENV=production lint-staged"
   },
   "lint-staged": {
