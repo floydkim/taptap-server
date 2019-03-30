@@ -1,8 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const {Coupons, Stores, Customers, Rewards} = require('../database');
-
+const { Coupons, Stores, Customers, Rewards } = require('../database');
 
 /* GET home page. */
 router.get('/', (req, res, next) => {

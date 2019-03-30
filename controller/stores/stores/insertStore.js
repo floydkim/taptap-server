@@ -1,10 +1,12 @@
-const {insertStore} = require('../../../models/stores');
+const { insertStore } = require('../../../models/stores');
 
 exports.insertStore = (request, response) => {
-  insertStore(request.body).then((store) => {
-    response.status(200).json(store);
-  }).catch((error) => {
-    console.log(error);
-    response.sendStatus(500);
-  });
+  insertStore(request.body)
+    .then(store => {
+      response.status(200).json(store);
+    })
+    .catch(error => {
+      console.log(error);
+      response.sendStatus(500);
+    });
 };

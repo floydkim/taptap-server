@@ -1,8 +1,11 @@
 const express = require('express');
-const {insertCoupon, getAllCoupons} = require('../controller/stores/coupons');
-const {insertReward, getAllRewards} = require('../controller/stores/rewards');
-const {insertStore, getAllStores} = require('../controller/stores/stores');
-const {insertCustomer, getAllCustomers} = require('../controller/stores/customers');
+const { insertCoupon, getAllCoupons } = require('../controller/stores/coupons');
+const { insertReward, getAllRewards } = require('../controller/stores/rewards');
+const { insertStore, getAllStores } = require('../controller/stores/stores');
+const {
+  insertCustomer,
+  getAllCustomers
+} = require('../controller/stores/customers');
 const router = express.Router();
 
 /* GET users listing. */
