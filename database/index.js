@@ -3,12 +3,14 @@ const Sequelize = require('sequelize');
 const env = process.env.NODE_ENV || 'test';
 const config = require(`${__dirname}/../config/config.json`)[env];
 
-const Sequelizer = (sequelize = new Sequelize(
+const Sequelizer = new Sequelize(
   config.database,
   config.username,
   config.password,
   config
-));
+);
+
+Sequelizer.sync();
 
 const Customers = Sequelizer.define('customers', {
   id: {
