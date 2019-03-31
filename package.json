@@ -3,9 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "NODE_ENV=development node ./app.js",
+    "start": "set NODE_ENV=development node ./app.js",
     "test": "mocha ./spec/**/*-spec.js --exit",
-    "precommit": "NODE_ENV=production lint-staged"
+    "precommit": "set NODE_ENV=production lint-staged"
   },
   "lint-staged": {
     "*.js": [

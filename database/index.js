@@ -7,7 +7,15 @@ const Sequelizer = new Sequelize(
   config.database,
   config.username,
   config.password,
-  config
+  {
+    port: config.port,
+    define: {
+      charset: 'utf8mb4',
+      dialectOptions: {
+        collate: 'utf8mb4_general_ci'
+      }
+    }
+  }
 );
 
 Sequelizer.sync();
