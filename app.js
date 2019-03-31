@@ -10,6 +10,8 @@ const indexRouter = require('./routes/index');
 const appsRouter = require('./routes/apps');
 const storesRouter = require('./routes/stores');
 
+const env = process.env.NODE_ENV || 'development';
+
 const app = express();
 const PORT = 3001;
 
@@ -38,7 +40,9 @@ app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.use(logger('dev'));
+if (env === 'development') {
+  app.use(logger('dev'));
+}
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));

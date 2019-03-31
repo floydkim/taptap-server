@@ -1,13 +1,22 @@
 const Sequelize = require('sequelize');
 
-const env = process.env.NODE_ENV || 'test';
+const env = process.env.NODE_ENV || 'development';
 const config = require(`${__dirname}/../config/config.json`)[env];
 
 const Sequelizer = new Sequelize(
   config.database,
   config.username,
   config.password,
-  config
+  {
+    port: config.port,
+    define: {
+      charset: 'utf8mb4',
+      dialectOptions: { collate: 'utf8mb4_general_ci' }
+    },
+    host: config.host,
+    dialect: config.dialect,
+    logging: env === 'development' ? console.log : () => {}
+  }
 );
 
 Sequelizer.sync();
