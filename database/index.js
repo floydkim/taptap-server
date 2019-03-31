@@ -11,10 +11,10 @@ const Sequelizer = new Sequelize(
     port: config.port,
     define: {
       charset: 'utf8mb4',
-      dialectOptions: {
-        collate: 'utf8mb4_general_ci'
-      }
-    }
+      dialectOptions: { collate: 'utf8mb4_general_ci' }
+    },
+    host: config.host,
+    dialect: config.dialect
   }
 );
 
