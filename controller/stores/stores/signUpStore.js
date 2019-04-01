@@ -1,19 +1,20 @@
-const { signInStore } = require('../../../models/stores');
+const { signUpStore } = require('../../../models/stores');
 
-exports.signInStore = (request, response) => {
-  const { email, password } = request.body;
+exports.signUpStore = (request, response) => {
+  const { email, password, name } = request.body;
   // check email and password
 
-  signInStore({
+  signUpStore({
     email,
-    password
+    password,
+    name
   })
     .then(store => {
       const result = {
         isSuccess: false
       };
 
-      if (store) {
+      if (store[1]) {
         result.isSuccess = true;
       }
 
