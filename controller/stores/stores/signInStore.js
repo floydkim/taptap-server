@@ -1,10 +1,10 @@
-const { loginStore } = require('../../../models/stores');
+const { signInStore } = require('../../../models/stores');
 
-exports.loginStore = (request, response) => {
+exports.signInStore = (request, response) => {
   const { email, password } = request.body;
   // check email and password
 
-  loginStore({
+  signInStore({
     email,
     password
   })
@@ -17,6 +17,9 @@ exports.loginStore = (request, response) => {
         result.isSuccess = true;
       }
 
+      return result;
+    })
+    .then(result => {
       response.status(200).json(result);
     })
     .catch(error => {
