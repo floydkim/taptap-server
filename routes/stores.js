@@ -1,7 +1,11 @@
 const express = require('express');
 const { insertCoupon, getAllCoupons } = require('../controller/stores/coupons');
 const { insertReward, getAllRewards } = require('../controller/stores/rewards');
-const { insertStore, getAllStores } = require('../controller/stores/stores');
+const {
+  insertStore,
+  getAllStores,
+  loginStore
+} = require('../controller/stores/stores');
 const {
   insertCustomer,
   getAllCustomers,
@@ -22,6 +26,7 @@ router.post('/customers/find-last-number', findLastNumber);
 // /stores
 router.get('/stores/get-all-stores', getAllStores);
 router.post('/stores/insert-store', insertStore);
+router.post('/stores/login-store', loginStore);
 
 // /rewards
 router.get('/rewards/get-all-rewards', getAllRewards);
