@@ -1,9 +1,9 @@
 const { Stores } = require('../../database');
 
-exports.loginStore = loginInformation => {
+exports.signInStore = signInInformation => {
   return Stores.sync().then(() =>
     Stores.findOne({
-      where: loginInformation
+      where: signInInformation
     })
   );
 };
