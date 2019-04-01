@@ -1,5 +1,5 @@
-const insertCustomer = require('./insertCustomer').insertCustomer;
+const signinCustomer = require('./signinCustomer').signinCustomer;
 
 module.exports = {
-  insertCustomer: insertCustomer
+  signinCustomer: signinCustomer
 };

@@ -1,7 +1,7 @@
-const { insertCustomer } = require('../../models/customer');
+const { signinCustomer } = require('../../models/customer');
 
-exports.insertCustomer = (request, response) => {
-  insertCustomer(request.body)
+exports.signinCustomer = (request, response) => {
+  signinCustomer(request.body)
     .then(customer => {
       response.status(200).json(customer);
     })
