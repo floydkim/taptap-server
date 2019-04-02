@@ -9,7 +9,8 @@ const {
   insertStore,
   getAllStores,
   signInStore,
-  signUpStore
+  signUpStore,
+  signInStoreWithToken
 } = require('../controller/stores/stores');
 const {
   insertCustomer,
@@ -33,6 +34,7 @@ router.get('/stores/get-all-stores', getAllStores);
 router.post('/stores/insert-store', insertStore);
 router.post('/stores/signin-store', signInStore);
 router.post('/stores/signup-store', signUpStore);
+router.post('/stores/signin-store-with-token', signInStoreWithToken);
 
 // /rewards
 router.get('/rewards/get-all-rewards', getAllRewards);
