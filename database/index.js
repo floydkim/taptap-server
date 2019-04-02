@@ -89,6 +89,7 @@ const Rewards = Sequelizer.define('rewards', {
 });
 
 module.exports = {
+  Sequelizer,
   Customers,
   Stores,
   Coupons,
