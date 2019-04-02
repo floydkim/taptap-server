@@ -1,7 +1,10 @@
 const express = require('express');
 const router = express.Router();
 const { signInCustomer } = require('../controller/apps/customers');
-const { getVisitedStores } = require('../controller/apps/coupons');
+const {
+  getVisitedStores,
+  getCouponsCount
+} = require('../controller/apps/coupons');
 
 /* GET users listing. */
 router.get('/', (req, res, next) => {
@@ -13,5 +16,6 @@ router.post('/customers/signin-customer', signInCustomer);
 
 //coupons
 router.post('/coupons/get-visited-stores', getVisitedStores);
+router.post('/coupons/get-coupons-count', getCouponsCount);
 
 module.exports = router;

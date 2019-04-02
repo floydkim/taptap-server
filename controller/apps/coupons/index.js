@@ -1,5 +1,7 @@
 const { getVisitedStores } = require('./getVisitedStores');
+const { getCouponsCount } = require('./getCouponsCount');
 
 module.exports = {
-  getVisitedStores: getVisitedStores
+  getVisitedStores: getVisitedStores,
+  getCouponsCount: getCouponsCount
 };
