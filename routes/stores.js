@@ -2,7 +2,8 @@ const express = require('express');
 const {
   insertCoupon,
   getAllCoupons,
-  getCouponsCount
+  getCouponsCount,
+  useCoupons
 } = require('../controller/stores/coupons');
 const { insertReward, getAllRewards } = require('../controller/stores/rewards');
 const {
@@ -44,5 +45,6 @@ router.post('/rewards/insert-reward', insertReward);
 router.get('/coupons/get-all-coupons', getAllCoupons);
 router.post('/coupons/insert-coupon', insertCoupon);
 router.post('/coupons/get-coupons-count', getCouponsCount);
+router.post('/coupons/use-coupons', useCoupons);
 
 module.exports = router;
