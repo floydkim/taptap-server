@@ -15,6 +15,7 @@ const Sequelizer = new Sequelize(
     },
     host: config.host,
     dialect: config.dialect,
+    timezone: '+9:00',
     logging: env === 'development' ? console.log : () => {}
   }
 );
