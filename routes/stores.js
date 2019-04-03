@@ -5,7 +5,11 @@ const {
   getCouponsCount,
   useCoupons
 } = require('../controller/stores/coupons');
-const { insertReward, getAllRewards } = require('../controller/stores/rewards');
+const {
+  insertReward,
+  getAllRewards,
+  getRequired
+} = require('../controller/stores/rewards');
 const {
   insertStore,
   getAllStores,
@@ -40,6 +44,7 @@ router.post('/stores/signin-store-with-token', signInStoreWithToken);
 // /rewards
 router.get('/rewards/get-all-rewards', getAllRewards);
 router.post('/rewards/insert-reward', insertReward);
+router.post('/rewards/get-required', getRequired);
 
 // /coupons
 router.get('/coupons/get-all-coupons', getAllCoupons);
