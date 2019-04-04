@@ -1,8 +1,9 @@
 const { signOutStore } = require('./signOutStore');
 const { signUpStore } = require('./signUpStore');
 const { signInStore, signInStoreWithToken } = require('./signInStore');
-const insertStore = require('./insertStore').insertStore;
-const getAllStores = require('./getAllStores').getAllStores;
+const { insertStore } = require('./insertStore');
+const { getAllStores } = require('./getAllStores');
+const { getStoreId } = require('./getStoreId');
 
 module.exports = {
   getAllStores: getAllStores,
@@ -10,5 +11,6 @@ module.exports = {
   signInStore: signInStore,
   signUpStore: signUpStore,
   signOutStore: signOutStore,
-  signInStoreWithToken: signInStoreWithToken
+  signInStoreWithToken: signInStoreWithToken,
+  getStoreId: getStoreId
 };

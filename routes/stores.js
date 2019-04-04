@@ -16,7 +16,8 @@ const {
   signInStore,
   signUpStore,
   signInStoreWithToken,
-  signOutStore
+  signOutStore,
+  getStoreId
 } = require('../controller/stores/stores');
 const {
   insertCustomer,
@@ -40,6 +41,7 @@ router.post('/stores/signin-store', signInStore);
 router.post('/stores/signup-store', signUpStore);
 router.get('/stores/siguout-store', signOutStore);
 router.get('/stores/signin-store-with-token', signInStoreWithToken);
+router.post('/stores/get-store-id', getStoreId);
 
 // /rewards
 router.get('/rewards/get-all-rewards', getAllRewards);
