@@ -148,3 +148,5 @@ yarn.lock
 package-lock.json
 
 vcs.xml
+
+config/
