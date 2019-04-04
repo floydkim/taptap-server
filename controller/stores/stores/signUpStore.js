@@ -4,6 +4,12 @@ exports.signUpStore = (request, response) => {
   const { email, password, name } = request.body;
   // check email and password
 
+  if (email === '' || password === '' || name === '') {
+    return response.status(200).json({
+      isSuccess: false
+    });
+  }
+
   signUpStore({
     email,
     password,
