@@ -1,6 +1,13 @@
 const { signInStore } = require('../../../models/stores');
 
 exports.signInStore = (request, response) => {
+  if (request.session.token) {
+    return response.status(200).json({
+      isSuccess: true,
+      id: request.session.token.id
+    });
+  }
+
   const { email, password } = request.body;
   // check email and password
 
@@ -15,10 +22,11 @@ exports.signInStore = (request, response) => {
 
       if (store) {
         result.isSuccess = true;
-        result.token = {
+        result.id = store.id;
+        request.session.token = {
+          id: store.id,
           email: email,
-          password: password,
-          date: new Date()
+          password: password
         };
       }
 
@@ -34,28 +42,14 @@ exports.signInStore = (request, response) => {
 };
 
 exports.signInStoreWithToken = (request, response) => {
-  const { email, password } = request.body.token;
-
-  signInStore({
-    email,
-    password
-  })
-    .then(store => {
-      const result = {
-        isSuccess: false
-      };
-
-      if (store) {
-        result.isSuccess = true;
-      }
-
-      return result;
-    })
-    .then(result => {
-      response.status(200).json(result);
-    })
-    .catch(error => {
-      console.log(error);
-      response.sendStatus(500);
+  if (request.session.token) {
+    response.status(200).json({
+      isSuccess: true,
+      id: request.session.token.id
     });
+  } else {
+    response.status(200).json({
+      isSuccess: false
+    });
+  }
 };

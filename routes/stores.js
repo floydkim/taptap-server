@@ -15,7 +15,8 @@ const {
   getAllStores,
   signInStore,
   signUpStore,
-  signInStoreWithToken
+  signInStoreWithToken,
+  signOutStore
 } = require('../controller/stores/stores');
 const {
   insertCustomer,
@@ -25,9 +26,7 @@ const {
 const router = express.Router();
 
 /* GET users listing. */
-router.get('/', (req, res, next) => {
-  res.send('respond with a resource');
-});
+router.get('/', (req, res, next) => {});
 
 // /customers
 router.get('/customers/get-all-customers', getAllCustomers);
@@ -39,7 +38,8 @@ router.get('/stores/get-all-stores', getAllStores);
 router.post('/stores/insert-store', insertStore);
 router.post('/stores/signin-store', signInStore);
 router.post('/stores/signup-store', signUpStore);
-router.post('/stores/signin-store-with-token', signInStoreWithToken);
+router.get('/stores/siguout-store', signOutStore);
+router.get('/stores/signin-store-with-token', signInStoreWithToken);
 
 // /rewards
 router.get('/rewards/get-all-rewards', getAllRewards);
