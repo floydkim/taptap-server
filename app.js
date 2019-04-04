@@ -17,7 +17,7 @@ const PORT = 3001;
 
 app.use(
   session({
-    secret: '@codestates',
+    secret: '@taptap',
     resave: false,
     saveUninitialized: true
   })
