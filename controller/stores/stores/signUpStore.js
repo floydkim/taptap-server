@@ -1,7 +1,8 @@
+const { getEncryptedPassword } = require('./encryptPassword');
 const { signUpStore } = require('../../../models/stores');
 
 exports.signUpStore = (request, response) => {
-  const { email, password, name } = request.body;
+  let { email, password, name } = request.body;
   // check email and password
 
   if (email === '' || password === '' || name === '') {
@@ -9,6 +10,8 @@ exports.signUpStore = (request, response) => {
       isSuccess: false
     });
   }
+
+  password = getEncryptedPassword(password);
 
   signUpStore({
     email,

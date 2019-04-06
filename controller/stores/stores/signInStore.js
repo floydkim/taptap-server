@@ -1,3 +1,4 @@
+const { getEncryptedPassword } = require('./encryptPassword');
 const { signInStore } = require('../../../models/stores');
 
 exports.signInStore = (request, response) => {
@@ -8,7 +9,8 @@ exports.signInStore = (request, response) => {
     });
   }
 
-  const { email, password } = request.body;
+  let { email, password } = request.body;
+  password = getEncryptedPassword(password);
   // check email and password
 
   signInStore({
