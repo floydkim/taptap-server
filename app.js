@@ -28,7 +28,8 @@ app.use(
     origin: [
       `http://localhost:${PORT}`,
       'http://localhost:3000',
-      'http://taptap-client.s3-website-ap-northeast-1.amazonaws.com'
+      'http://taptap-client.s3-website-ap-northeast-1.amazonaws.com',
+      'http://floyd12.mooo.com'
     ],
     methods: ['GET', 'POST'],
     credentials: true

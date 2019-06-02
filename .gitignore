@@ -150,3 +150,5 @@ package-lock.json
 vcs.xml
 
 config/
+
+.vscode
